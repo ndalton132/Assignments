@@ -1,0 +1,77 @@
+class ToDo {
+    constructor(type) {
+        this.type = type;
+        this.lists = [];
+    }
+}
+
+class Menu{
+    constructor(){
+        this.total = [];
+        this.selectedList = null;
+    }
+
+    start() {
+        let selection = this.showMainMenuOptions();
+        while (selection != 0) {
+            switch(selection) {
+                case '1':
+                    this.createList();
+                    break;
+                case'2':
+                    this.deleteList();
+                    break;
+                case'3':
+                    this.displayList();
+                    break;
+                default:
+                    selection = 0;
+
+                
+                
+
+            }
+            selection = this.showMainMenuOptions();
+        }
+    alert('Goodbye!');
+    }
+    showMainMenuOptions(){
+        return prompt(`
+        0) exit
+        1) create new list
+        2) delete list
+        3) display all lists`)
+    }
+
+    showListMenuOptions(listInfo){
+        return prompt(`
+        0) back
+        ------------
+        ${listInfo}`);
+    }
+
+    displayList(){
+        let List = '';
+        for (let i = 0; i < this.total.length; i++){
+            List += i + ') ' + this.total[i].type + '\n';
+        }
+        alert(List);
+    }
+
+    createList(){
+        let type = prompt('Enter name for new List:');
+        this.total.push(new ToDo(type));
+
+    }
+    deleteList(){
+        let index = prompt("Enter the index of the List item you want to delete:");
+        if (index > -1 && index < this.total.length){
+            this.total.splice(index,1);
+        }
+     }
+}
+ 
+
+
+let menu = new Menu();
+menu.start()
