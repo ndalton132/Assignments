@@ -1,0 +1,94 @@
+class Deck {
+    constructor() {
+      this.deck = [];
+      
+  
+      const suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
+      const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  
+      for (let suit in suits) {
+        for (let value in values) {
+          this.deck.push(values[value]);
+        }
+      }
+    }
+  
+    shuffle(){
+      const deck = this.deck;
+      let m = deck.length, i;
+  
+      while(m){
+        let i = Math.floor(Math.random() * m--);
+  
+        [deck[m], deck[i]] = [deck[i], deck[m]];
+      }
+  
+      return this;
+    }
+  
+    deal(){
+      return console.log(this.deck.pop());
+    }
+  }
+  
+  const deck1 = new Deck();
+  console.log(deck1.shuffle())
+  
+ 
+class CardGame extends Deck{
+    constructor(deck){
+      super(deck);
+      
+      
+
+    }
+    Split(){
+      
+      
+      this.HumDeck = [];
+      this.CompDeck = [];
+      let deck = this.deck;
+      
+      
+      let Player1 = deck.slice(0,26);
+      let User1 = deck.slice(26,52);
+      
+      
+      this.HumDeck.push(Player1)
+      this.CompDeck.push(User1)
+     
+      
+      
+    }
+  GetOneValue(){
+    
+    let Player = this.HumDeck.pop()
+    let Computer = this.CompDeck.pop()
+    let CompPoints = (0)
+    let UserPoints = (0)
+   
+    Player.forEach((num1,index) => {
+        
+        const num2 = Computer[index];
+        if(num1 < num2){
+            console.log(`${num1} < ${num2}  Computers total = ${CompPoints++} Users total = ${UserPoints}`)
+        }
+        
+        if(num1 > num2){
+            console.log(`${num1} > ${num2} Computers total = ${CompPoints} Users total = ${UserPoints++} `)
+        }
+        if(num1 == num2){
+            console.log(`${num1} = ${num2} + 0 Points `)
+        }
+
+        });
+    
+    }
+    
+
+}
+  
+  const deck2 = new CardGame();
+  deck2.shuffle();
+  deck2.Split();
+  deck2.GetOneValue();
