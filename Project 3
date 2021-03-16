@@ -1,0 +1,134 @@
+// first lines of code
+//A
+let array = [2 ,9 ,23 , 64 ,2 ,8 ,28 ,93]
+
+let firstElement = array[0]
+let lastElement = array[array.length - 1]
+let lastFirst = (lastElement - firstElement)
+console.log(lastFirst)
+//B
+let array2 = [12 ,19 ,26 ,8 ,28 ,73]
+let firstElement2 = array2[0]
+let lastElement2 = array2[array2.length - 1]
+let lastFirst2 = (lastElement2 - firstElement2)
+console.log(lastFirst2)
+
+//C
+
+var average21 = 0;
+    for(var i = 0; i < array.length;i++){
+        average21 += array[i]/array.length;
+    }
+  console.log(average21)
+
+//Second coding problem
+//A
+var names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob']
+var names1432 = []
+let lengths = names.map(function(element){
+    return element.length
+});
+
+  let sum = lengths.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue;
+  });
+  console.log(sum/6)
+//B
+for (let i = 0; i < names.length; i++){
+    for (let j = 0; j< names1432.length;j++){
+      if(names[i] === names1432[j]){
+      names1432.push(names)
+      }}}
+      console.log(names)
+  
+  //3rd
+// const lastItem = names[names.length - 1]
+
+  //4th
+// const firstItem = names[0]
+  //5th
+  nameLengths = []
+  let names1 = names.map(function(element){
+    return element
+});
+  nameLengths.push(names1)
+  console.log(lengths)
+  
+  //6th
+
+  let nameLengths1 = lengths.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue;
+});
+console.log(nameLengths1)
+  
+//7th
+function hellor(word,n){
+    reapwords = (word.repeat(n))
+    return reapwords
+}
+console.log(hellor("Hello",3))
+
+//8th
+function fullnme(first,last){
+    all = (first + " " +last)
+    return all
+}
+console.log(fullnme("Aldoux", "Huxley"))
+
+//9th
+var num100 = [12,13,314,515,16,17,12,681] 
+    function getTotal(numbers13){
+    const total = num100.reduce((acc, c) => acc + c, 0);
+    if (total > 100)
+    return true;
+
+    
+}
+console.log(getTotal(num100));
+
+
+//10th
+
+
+var num100 = [12,13,34,55,16,17,1,61] 
+    function getAvg(numbers13){
+    const total = num100.reduce((acc, c) => acc + c, 0);
+    const variable132 = total / num100.length;
+    return variable132
+}
+console.log(getAvg(num100));
+
+//11th
+
+var num101 = [12,13,4,1155,164,7,1,61] 
+    function get1avg(numbers13){
+    const total = num101.reduce((acc, c) => acc + c, 0);
+    const variable1323 = total / num101.length;
+    return variable1323
+}
+
+var num102 = [12,13,34,554,16,17,1,43] 
+    function get2avg(numbers13){
+    const total = num102.reduce((acc, c) => acc + c, 0);
+    const variable1324 = total / num102.length;
+    return variable1324
+}
+
+if((get1avg(num101))>(get2avg(num102)))
+  console.log(true)
+
+//12th
+function willBuyDrink(ishotoutside,moneyinpocket){
+    if(( ishotoutside > 70) && (moneyinpocket > 10.50))
+    return true
+}
+
+//13th
+// weight counter, sometimes its annoying to count how much weight you have on a barbell
+//This calculates the total weight of the barbell by plate
+var weightplates = [45,45,45,25,25,10,10,5,5] 
+    function gettotal(numbers134){
+    const total = weightplates.reduce((acc, c) => acc + c, 0);
+    return total
+    }
+    console.log(gettotal(weightplates))
